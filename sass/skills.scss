@@ -1,0 +1,22 @@
+.chart {
+  display: inline-block;
+  height: 150px;
+  margin: 50px 0;
+  position: relative;
+  text-align: center;
+  width: 150px;
+}
+
+.chart canvas {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.percent {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 140px;
+  z-index: 2;
+}

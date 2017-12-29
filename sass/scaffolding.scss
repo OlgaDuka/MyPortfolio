@@ -1,0 +1,59 @@
+body {
+  font: 300 14px/1.8 "Raleway", sans-serif;
+  color: #666666;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: #e7746f;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #999999;
+}
+
+/* ---------------------------------------------- /*
+ * Transition elsements
+/* ---------------------------------------------- */
+
+
+.navbar a,
+.form-control {
+  transition: all 0.4s ease-in-out 0s;
+}
+
+a,
+.btn {
+  transition: all 0.125s ease-in-out 0s;
+}
+
+/* ---------------------------------------------- /*
+ * Reset box-shadow
+/* ---------------------------------------------- */
+
+.btn,
+.form-control,
+.form-control:hover,
+.form-control:focus,
+.navbar-custom .dropdown-menu {
+  box-shadow: none;
+}
+
+/* ---------------------------------------------- /*
+ * Reset border-radius
+/* ---------------------------------------------- */
+
+.btn,
+.iconbox,
+.progress,
+.scroll-up a,
+.form-control,
+.input-group-addon {
+  border-radius: 3px;
+}
