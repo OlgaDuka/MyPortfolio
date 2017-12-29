@@ -1,3 +1,4 @@
+'use strict';
 (function ($) {
 // Preloader
   $(window).load(function () {
@@ -43,7 +44,7 @@
 
 
     /* ---------------------------------------------- /*
-    * Skills
+    * Инструменты
     /* ---------------------------------------------- */
 
     $('.skills').waypoint(function () {
@@ -59,9 +60,9 @@
       });
     }, {offset: '80%'});
 
-    /* ---------------------------------------------- /*
-    * Home BG
-    /* ---------------------------------------------- */
+    // ----------------------------------------------
+    // Home BG
+    // ----------------------------------------------
 
     $('.screen-height').height($(window).height());
 
@@ -75,19 +76,15 @@
       $('.home').parallax('50%', 0.1);
     }
 
-
-    /* ---------------------------------------------- /*
-    * WOW Animation When You Scroll
-    /* ---------------------------------------------- */
-
-    wow = new WOW({
-      mobile: false
-    });
+    // ----------------------------------------------
+    // WOW - обеспечивает анимацию при скроллинге
+    // ----------------------------------------------
+    var wow = new window.WOW();
     wow.init();
 
-    /* ---------------------------------------------- /*
-    * Contact form ajax
-    /* ---------------------------------------------- */
+    // ----------------------------------------------
+    // Форма контакта с использованием ajax
+    // ----------------------------------------------
 
     $('#contact-form').submit(function (e) {
 
@@ -106,13 +103,13 @@
 
       if ((cName === '' || cEmail === '' || cMessage === '')) {
         response.fadeIn(500);
-        response.html('<i class="fa fa-warning"></i> Please fix the errors and try again.');
+        response.html('<i class="fa fa-warning"></i> Что-то пошло не так. Попробуйте еще раз.');
       } else {
         $.ajax({
-          type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
-          url: 'php/contact.php', // the url where we want to POST
-          data: formData, // our data object
-          dataType: 'json', // what type of data do we expect back from the server
+          type: 'POST',
+          url: 'contact.php',
+          data: formData,
+          dataType: 'json',
           encode: true,
           success: function (res) {
             var ret = $.parseJSON(JSON.stringify(res));

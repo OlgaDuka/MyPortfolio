@@ -48,7 +48,7 @@ h6 {
 /* ---------------------------------------------- */
 
 .pfblock {
-  padding: 120px 0 100px;
+  padding: 70px 0 70px;
 }
 
 .pfblock-gray {
@@ -59,25 +59,19 @@ h6 {
   padding: 0;
 }
 
-.calltoaction h1,
 .calltoaction h2,
-.calltoaction h3,
 .calltoaction h4,
-.calltoaction h5,
-.calltoaction h6,
 .pfblock-image,
-.pfblock-image h1,
-.pfblock-image h2,
-.pfblock-image h3,
-.pfblock-image h4,
-.pfblock-image h5,
-.pfblock-image h6 {
+.pfblock-image h1 {
   color: #ffffff;
 }
 
 .pfblock-header {
   text-align: center;
-  margin: 0 0 60px;
+  margin: 0 0 50px;
+  &--bottom {
+    margin: 20px 0 0;
+  }
 }
 
 .pfblock-header-left {
@@ -102,7 +96,7 @@ h6 {
   background: rgba(135, 135, 135, 0.5);
   width: 100px;
   height: 1px;
-  margin: 30px auto;
+  margin: 20px auto;
 }
 
 .pfblock-icon {
