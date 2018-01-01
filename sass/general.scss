@@ -1,19 +1,23 @@
 /* ---------------------------------------------- /*
  * Typography
 /* ---------------------------------------------- */
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font: 700 40px/1.2 "Raleway", sans-serif;
+  font: 700 40px/1.2 "Open Sans", sans-serif;
   text-transform: uppercase;
   letter-spacing: 5px;
   margin: 5px 0 5px;
   color: #222222;
 }
+
+h1 {
+  font: 700 40px/1.2 "Montserrat", sans-serif;
+}
+
 
 h2 {
   font-size: 30px;
@@ -103,14 +107,11 @@ h6 {
   font-size: 32px;
 }
 
-
 .row {
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
 }
-
-
 
 /* ---------------------------------------------- /*
  * Media

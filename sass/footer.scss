@@ -2,14 +2,14 @@
  * Footer
 /* ---------------------------------------------- */
 
-footer {
+.footer {
   background: #222222;
   text-align: center;
   padding: 40px 0;
   color: #ffffff;
 }
 
-footer span {
+.footer__heart {
   animation-iteration-count: infinite;
   color: #ff5252;
 }
@@ -35,9 +35,24 @@ footer span {
   border-radius: 3px;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.2);
+
+  &:hover {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.8);
+  }
 }
 
-.social-links a:hover {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: rgba(255, 255, 255, 0.8);
+.footer__copyright {
+  margin: 0 20px 0 5px;
+  color: #ffffff;
+}
+
+.footer__academy {
+  display: inline-block;
+  fill: #ffb601;
+  color: #ffb601;
+
+  &:hover {
+    fill: #dddddd;
+  }
 }
