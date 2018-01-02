@@ -1,15 +1,8 @@
-// Accordion Height
+// Высота аккордеона
 $a-height: 500px;
 
-// Position text along bottom
+// Позиция текста внизу
 $text-offset: $a-height - 100;
-
-// Page Title
-h1 {
-  text-align: center;
-  font-family: Montserrat, sans-serif;
-  color: #333;
-}
 
 .accordion {
   width: 100%;
@@ -18,119 +11,118 @@ h1 {
   overflow: hidden;
   margin: 0 auto;
 
-  ul {
+  &__list {
     width: 100%;
     display: table;
     table-layout: fixed;
     margin: 0;
     padding: 0;
 
-    li {
-      display: table-cell;
-      vertical-align: bottom;
+    &:hover .accordion__item {
+      width: 10%;
+    }
+
+    &:hover .accordion__item:hover {
+      width: 60%;
+      background-color: #dddddd;
+
+      * {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__item {
+    display: table-cell;
+    vertical-align: bottom;
+    position: relative;
+    width: 20%; // 5 в 100
+    height: $a-height;
+    background-repeat: no-repeat;
+    background-position: top;
+    transition: all 500ms ease;
+
+    // Картинки
+    &:nth-child(1) {
+      background-image: url("/images/skill1.jpg");
+    }
+
+    &:nth-child(2) {
+      background-image: url("/images/skill2.jpg");
+    }
+
+    &:nth-child(3) {
+      background-image: url("/images/skill3.jpg");
+    }
+
+    &:nth-child(4) {
+      background-image: url("/images/skill4.jpg");
+    }
+
+    &:nth-child(5) {
+      background-image: url("/images/skill5.jpg");
+    }
+  }
+
+  &__text {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: $a-height;
+    position: relative;
+    z-index: 3;
+    vertical-align: bottom;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    transition: all 200ms ease;
+
+    * {
+      opacity: 0;
+      margin: 0;
+      width: 100%;
+      text-overflow: ellipsis;
       position: relative;
-      width: 20%; // 5 в 100
-      height: $a-height;
-      background-repeat: no-repeat;
-      background-position: top;
-      transition: all 500ms ease;
-
-      div {
-        display: block;
-        overflow: hidden;
-        width: 100%;
-
-        a {
-          display: block;
-          height: $a-height;
-          width: 100%;
-          position: relative;
-          z-index: 3;
-          vertical-align: bottom;
-          padding: 20px 30px;
-          box-sizing: border-box;
-          color: #fff;
-          text-decoration: none;
-          font-family: "Open Sans", sans-serif;
-          transition: all 200ms ease;
-          * {
-            opacity: 0;
-            margin: 0;
-            width: 100%;
-            text-overflow: ellipsis;
-            position: relative;
-            z-index: 5;
-            white-space: nowrap;
-            overflow: hidden;
-            transform: translateX(-20px);
-            transition: all 400ms ease;
-          }
-          h2 {
-            font-family: Montserrat, sans-serif;
-            text-overflow: clip;
-            font-size: 30px;
-            text-transform: uppercase;
-            margin-bottom: 2px;
-            top: $text-offset;
-          }
-          p {
-            top: $text-offset;
-            font-size: 16px;
-          }
-        }
-      }
+      z-index: 5;
+      white-space: nowrap;
+      overflow: hidden;
+      transform: translateX(-20px);
+      transition: all 400ms ease;
     }
 
-    // Background images
-    li:nth-child(1) {
-      background-image: url('/images/skill1.jpg');
-    }
-    li:nth-child(2) {
-      background-image: url('/images/skill2.jpg');
-    }
-    li:nth-child(3) {
-      background-image: url('/images/skill3.jpg');
-    }
-    li:nth-child(4) {
-      background-image: url('/images/skill4.jpg');
-    }
-    li:nth-child(5) {
-      background-image: url('/images/skill5.jpg');
+    h2 {
+      font-family: "Montserrat", sans-serif;
+      text-overflow: clip;
+      font-size: 30px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+      top: $text-offset;
     }
 
-    &:hover li { width:10%; }
-
-    &:hover li:hover {
-
-      width:60%;
-
-      a {
-        background:rgba(0, 0, 0, 0.2);
-
-        * {
-          opacity:1;
-          -webkit-transform:translateX(0);
-          transform:translateX(0);
-        }
-      }
+    p {
+      top: $text-offset;
+      font-size: 16px;
     }
   }
 }
 
-// Stack items
-@media screen and (max-width: 600px) {
-
-    // IE gets fussy if this isn't here
+@media screen and (max-width: 768px) {
+  // Для IE
   .accordion {
-    height:auto;
-    ul,ul:hover {
-      li,li:hover {
-        position:relative;
-        display:table;
-        table-layout:fixed;
-        width:100%;
-        -webkit-transition:none;
-        transition:none;
+    height: auto;
+
+    &__list,
+    &__list:hover {
+      .accordion__item,
+      .accordion__item:hover {
+        position: relative;
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        transition: none;
       }
     }
   }

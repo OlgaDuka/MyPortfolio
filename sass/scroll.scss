@@ -1,6 +1,6 @@
-/* ---------------------------------------------- /*
- * Scroll to top
-/* ---------------------------------------------- */
+// ----------------------------------------------
+// Прокрутка вверх
+// ----------------------------------------------
 
 .scroll-up {
   position: fixed;
@@ -8,28 +8,28 @@
   z-index: 999;
   bottom: 2em;
   right: 2em;
+
+  a {
+    background-color: rgba(135, 135, 135, 0.5);
+    display: block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 30px;
+
+    &:hover,
+    &:active {
+      background-color: rgba(235, 235, 235, 0.8);
+      color: #e7746f;
+    }
+  }
 }
 
-.scroll-up a {
-  background-color: rgba(135, 135, 135, 0.5);
-  display: block;
-  width: 35px;
-  height: 35px;
-  text-align: center;
-  color: #ffffff;
-  font-size: 15px;
-  line-height: 30px;
-}
-
-.scroll-up a:hover,
-.scroll-up a:active {
-  background-color: rgba(235, 235, 235, 0.8);
-  color: #e7746f;
-}
-
-/* ---------------------------------------------- /*
-* Scroll Down
-/* ---------------------------------------------- */
+// ----------------------------------------------
+// Прокрутка вниз
+// ----------------------------------------------
 
 .scroll-down {
   position: absolute;
@@ -43,17 +43,17 @@
   display: block;
   z-index: 10;
   text-align: center;
-}
 
-.scroll-down span {
-  position: relative;
-  color: #ffffff;
-  animation-name: drop;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-delay: 0s;
-  animation-iteration-count: infinite;
-  animation-play-state: running;
+  span {
+    position: relative;
+    color: #ffffff;
+    animation-name: drop;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+  }
 }
 
 @keyframes drop {
