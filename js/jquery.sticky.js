@@ -65,6 +65,7 @@
       var s = sticked[i];
       if (typeof s.getWidthFrom !== 'undefined' && s.responsiveWidth === true) {
         s.stickyElement.css('width', $(s.getWidthFrom).width());
+        s.stickyElement.css('background-color', '#f5f5f5');
       }
     }
   };
@@ -82,12 +83,9 @@
           stickyElement.parent().css({width: stickyElement.outerWidth(), marginLeft: 'auto', marginRight: 'auto'});
         }
 
-        if (stickyElement.css('float') === 'right') {
-          stickyElement.css({'float': 'none'}).parent().css({'float': 'right'});
-        }
-
         var stickyWrapper = stickyElement.parent();
-        stickyWrapper.css('height', stickyElement.outerHeight());
+        // stickyWrapper.css('height', stickyElement.outerHeight());
+        stickyWrapper.css('height', 70);
         sticked.push({
           topSpacing: o.topSpacing,
           bottomSpacing: o.bottomSpacing,

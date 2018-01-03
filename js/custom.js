@@ -1,16 +1,19 @@
 'use strict';
 (function ($) {
-// Preloader
+// Preloader - анимация, пока ждем загрузку страницы (шрифты, скрипты и т.д.)
   $(window).load(function () {
     $('.status').fadeOut();
     $('.preloader').delay(300).fadeOut('slow');
   });
 
   $(document).ready(function () {
+    var toggle = document.querySelector('.navbar__toggle');
+    var menu = document.querySelector('.navbar__list');
+    var menuItems = menu.querySelectorAll('.navbar__item');
 
-    /* ---------------------------------------------- /*
-    * Smooth scroll / Scroll To Top
-    /* ---------------------------------------------- */
+    // ----------------------------------------------
+    // "Мягкий" скроллинг при нажатии на пункт меню или кнопки перехода
+    // ----------------------------------------------
 
     $('a[href*=#]').bind('click', function (e) {
       var anchor = $(this);
@@ -26,23 +29,41 @@
         $('.scroll-up').fadeOut();
       }
     });
-
-    /* ---------------------------------------------- /*
-    * Navbar
-    /* ---------------------------------------------- */
-
-    $('.header').sticky({
-      topSpacing: 0
+    // Первый активный пункт меню после главной страницы
+    $('.scroll-down').bind('click', function () {
+      menuItems[1].classList.add('navbar__item--active');
     });
-
-    $('body').scrollspy({
-      target: '.navbar-custom',
-      offset: 70
-    });
-
 
     // ----------------------------------------------
-    // Home BG
+    // Меню
+    // ----------------------------------------------
+
+    // Садим меню на стикер вверху экрана
+    $('.header').sticky({topSpacing: 0});
+
+    // Закрываем меню, если JS работает
+    menu.classList.remove('navbar__list--nojs');
+    menu.classList.add('navbar__list--close');
+    // Переключаем состояние меню по кнопке
+    toggle.addEventListener('click', function () {
+      menu.classList.toggle('navbar__list--close');
+    });
+
+    // Переключаем активный пункт меню и закрываем меню, если оно выпадающее
+    var onMenuItemClick = function (evt) {
+      [].forEach.call(menuItems, function (element) {
+        element.classList.remove('navbar__item--active');
+      });
+      evt.target.classList.add('navbar__item--active');
+      menu.classList.add('navbar__list--close');
+    };
+    // Добавляем событие клика на пункты меню
+    [].forEach.call(menuItems, function (element) {
+      element.addEventListener('click', onMenuItemClick);
+    });
+
+    // ----------------------------------------------
+    // Эффект параллакса на домашней странице
     // ----------------------------------------------
 
     $('.screen-height').height($(window).height());
@@ -58,7 +79,7 @@
     }
 
     // ==================================================
-    // Технологии
+    // Эффекты для раздела "Технологии"
     // ==================================================
     $('.tile').bind('mouseover', function (e) {
       e.target.classList.add('animated');

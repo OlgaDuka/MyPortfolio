@@ -16,6 +16,7 @@ img {
 
 a {
   color: #e7746f;
+  transition: all 0.125s ease-in-out 0s;
 }
 
 a:hover {
@@ -23,36 +24,6 @@ a:hover {
   color: #999999;
 }
 
-/* ---------------------------------------------- /*
- * Transition elsements
-/* ---------------------------------------------- */
-
-
-.navbar a {
-  transition: all 0.4s ease-in-out 0s;
-}
-
-a,
-.btn {
-  transition: all 0.125s ease-in-out 0s;
-}
-
-/* ---------------------------------------------- /*
- * Reset box-shadow
-/* ---------------------------------------------- */
-
-.btn,
-.navbar-custom .dropdown-menu {
-  box-shadow: none;
-}
-
-/* ---------------------------------------------- /*
- * Reset border-radius
-/* ---------------------------------------------- */
-
-.btn,
-.iconbox,
-.progress,
-.scroll-up a {
-  border-radius: 3px;
+* {
+  box-sizing: border-box;
 }

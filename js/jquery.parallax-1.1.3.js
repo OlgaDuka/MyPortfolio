@@ -56,7 +56,7 @@ http://www.gnu.org/licenses/gpl.html
       var pos = $window.scrollTop();
 
       $this.each(function () {
-        var $element = $(this);
+        var $element = $this;
         var top = $element.offset().top;
         var height = getHeight($element);
 
