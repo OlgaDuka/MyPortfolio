@@ -1,0 +1,50 @@
+.social {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.social__btn {
+  display: inline-block;
+  margin: 5px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  line-height: 35px;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.2);
+
+  &:hover {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  &:active {
+    border: 1px solid rgba(255, 255, 255, 0.9);
+  }
+}
+
+.social__img {
+  &--fb {
+    padding-left: 2px;
+    padding-top: 4px;
+  }
+
+  &--vk {
+    padding-top: 5px;
+  }
+
+  &--github {
+    padding-top: 3px;
+  }
+
+  &--cert {
+    padding-top: 5px;
+  }
+
+  &:hover,
+  &:active {
+    opacity: 0.5;
+  }
+}

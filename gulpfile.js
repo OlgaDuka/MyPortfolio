@@ -5,6 +5,9 @@ var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
+var rename = require('gulp-rename');
+var svgstore = require('gulp-svgstore');
+var svgmin = require('gulp-svgmin');
 var server = require('browser-sync').create();
 
 gulp.task('style', function () {
@@ -16,6 +19,17 @@ gulp.task('style', function () {
       ]))
       .pipe(gulp.dest('css'))
       .pipe(server.stream());
+});
+
+// Создание SVG-спрайта
+gulp.task('sprite', function () {
+  return gulp.src('images/svg/*.svg')
+      .pipe(svgmin())
+      .pipe(svgstore({
+        inlineSvg: true
+      }))
+      .pipe(rename('sprite.svg'))
+      .pipe(gulp.dest('images'));
 });
 
 gulp.task('serve', ['style'], function () {

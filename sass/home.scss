@@ -8,7 +8,7 @@
   padding: 0;
 }
 
-.home-overlay {
+.home__overlay {
   background-color: rgba(101, 143, 131, 0.1);
   background-image: url("../images/pattern.png");
   background-repeat: repeat;
@@ -20,7 +20,7 @@
   z-index: 0;
 }
 
-.intro {
+.home__intro {
   position: absolute;
   width: 100%;
   top: 70%;
@@ -30,11 +30,11 @@
   padding: 0 15px;
 }
 
-.intro h1 {
+.home__title {
   font-weight: 800;
 }
 
-.start {
+.home__start {
   font-size: 16px;
   font-style: normal;
   text-transform: none;

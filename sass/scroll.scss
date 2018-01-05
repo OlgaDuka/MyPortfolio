@@ -36,7 +36,7 @@
 // Прокрутка вверх
 // ----------------------------------------------
 
-.scroll-up {
+.scroll__up {
   position: fixed;
   display: none;
   z-index: 999;
@@ -48,10 +48,6 @@
     display: block;
     width: 35px;
     height: 35px;
-    text-align: center;
-    color: #ffffff;
-    font-size: 15px;
-    line-height: 30px;
 
     &:hover,
     &:active {
@@ -61,7 +57,7 @@
   }
 }
 
-.arrow-up {
+.scroll__arrow-up {
   @include zero-centered;
   @include triangle-top(7px, #ffffff);
 }
@@ -70,7 +66,7 @@
 // Прокрутка вниз
 // ----------------------------------------------
 
-.scroll-down {
+.scroll__down {
   position: absolute;
   left: 50%;
   bottom: 40px;
@@ -112,9 +108,8 @@
   }
 }
 
-.arrow-down {
+.scroll__arrow-down {
   @include zero-centered;
-  left: -7px;
-
   @include triangle-bottom(7px, #ffffff);
+  left: -7px;
 }
