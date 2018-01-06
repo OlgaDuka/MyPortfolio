@@ -9,23 +9,25 @@
   background-position: 0 0;
   background-size: cover;
   padding: 50px 0;
-  color: #999999;
-}
 
-.calltoaction h2 {
-  font-size: 20px;
-  letter-spacing: 1px;
-  margin-bottom: 5px;
-  color: #ffffff;
-}
+  &__title {
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #ffffff;
+  }
 
-.calltoaction__description {
-  padding-top: 20px;
-  padding-bottom: 30px;
-  font-size: 20px;
-  color: #ffffff;
-}
+  &__desc {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #333333;
+  }
 
-.calltoaction__contact {
-  color: #000000;
+  &__contact {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333333;
+  }
 }

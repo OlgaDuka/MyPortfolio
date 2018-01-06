@@ -4,7 +4,6 @@
 
 .effect-bubba {
   min-width: 300px;
-  background: #76847e;
 }
 
 .effect-bubba img {
@@ -63,7 +62,6 @@
 
 .effect-bubba ul,
 .effect-bubba ul > li {
-  padding: 10px;
   opacity: 0;
   transition: opacity 0.35s, transform 0.35s;
   transform: translate3d(0, 0, 0);

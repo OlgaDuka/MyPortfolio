@@ -24,13 +24,13 @@
 
     $(window).scroll(function () {
       if ($(this).scrollTop() > 100) {
-        $('.scroll-up').fadeIn();
+        $('.scroll--up').fadeIn();
       } else {
-        $('.scroll-up').fadeOut();
+        $('.scroll--up').fadeOut();
       }
     });
     // Первый активный пункт меню после главной страницы
-    $('.scroll-down').bind('click', function () {
+    $('.scroll__down').bind('click', function () {
       menuItems[1].classList.add('navbar__item--active');
     });
 

@@ -4,12 +4,14 @@ $a-height: 500px;
 // Позиция текста внизу
 $text-offset: $a-height - 100;
 
-.accordion {
-  width: 100%;
-  max-width: 1200px;
-  height: $a-height;
-  overflow: hidden;
-  margin: 0 auto;
+.skills {
+  &__accordion {
+    width: 100%;
+    max-width: 1200px;
+    height: $a-height;
+    overflow: hidden;
+    margin: 0 auto;
+  }
 
   &__list {
     width: 100%;
@@ -18,11 +20,11 @@ $text-offset: $a-height - 100;
     margin: 0;
     padding: 0;
 
-    &:hover .accordion__item {
+    &:hover .skills__item {
       width: 10%;
     }
 
-    &:hover .accordion__item:hover {
+    &:hover .skills__item:hover {
       width: 60%;
       background-color: #dddddd;
 
@@ -65,7 +67,7 @@ $text-offset: $a-height - 100;
     }
   }
 
-  &__text {
+  &__desc {
     display: block;
     overflow: hidden;
     width: 100%;
@@ -92,32 +94,34 @@ $text-offset: $a-height - 100;
       transform: translateX(-20px);
       transition: all 400ms ease;
     }
+  }
 
-    h2 {
-      font-family: "Montserrat", sans-serif;
-      text-overflow: clip;
-      font-size: 30px;
-      text-transform: uppercase;
-      margin-bottom: 2px;
-      top: $text-offset;
-    }
+  &__title {
+    font-family: "Montserrat", sans-serif;
+    text-overflow: clip;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    top: $text-offset;
+  }
 
-    p {
-      top: $text-offset;
-      font-size: 16px;
-    }
+  &__text {
+    top: $text-offset;
+    font-size: 16px;
   }
 }
 
 @media screen and (max-width: 768px) {
   // Для IE
-  .accordion {
-    height: auto;
+  .skills {
+    &__accordion {
+      height: auto;
+    }
 
     &__list,
     &__list:hover {
-      .accordion__item,
-      .accordion__item:hover {
+      .skills__item,
+      .skills__item:hover {
         position: relative;
         display: table;
         table-layout: fixed;

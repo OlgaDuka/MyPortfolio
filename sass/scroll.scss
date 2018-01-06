@@ -1,58 +1,26 @@
-//--------------------------------------------
-// Стрелки с помощью треугольников
-//--------------------------------------------
-@mixin zero-centered {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-@mixin triangle($size, $color) {
-  width: 0;
-  height: 0;
-  border-width: $size;
-  border-style: solid;
-  border-color: $color;
-}
-
-@mixin triangle-top($size, $color) {
-  @include triangle($size, $color);
-  border-right-color: transparent;
-  border-left-color: transparent;
-  border-top-style: none;
-}
-
-@mixin triangle-bottom($size, $color) {
-  @include triangle($size, $color);
-  border-left-color: transparent;
-  border-right-color: transparent;
-  border-bottom-style: none;
-}
-
 // ----------------------------------------------
 // Прокрутка вверх
 // ----------------------------------------------
 
-.scroll__up {
-  position: fixed;
-  display: none;
-  z-index: 999;
-  bottom: 2em;
-  right: 2em;
+.scroll {
+  &--up {
+    position: fixed;
+    display: none;
+    z-index: 999;
+    bottom: 2em;
+    right: 2em;
 
-  a {
-    background-color: rgba(135, 135, 135, 0.5);
-    display: block;
-    width: 35px;
-    height: 35px;
+    .scroll__up {
+      background-color: rgba(135, 135, 135, 0.5);
+      display: block;
+      width: 35px;
+      height: 35px;
 
-    &:hover,
-    &:active {
-      background-color: rgba(235, 235, 235, 0.8);
-      color: #e7746f;
+      &:hover,
+      &:active {
+        background-color: rgba(235, 235, 235, 0.8);
+        color: #e7746f;
+      }
     }
   }
 }
@@ -78,34 +46,11 @@
   display: block;
   z-index: 10;
   text-align: center;
-
-  span {
-    position: relative;
-    color: #ffffff;
-    animation-name: drop;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
-  }
 }
 
-@keyframes drop {
-  0% {
-    top: 10px;
-    opacity: 0;
-  }
-
-  30% {
-    top: 20px;
-    opacity: 1;
-  }
-
-  100% {
-    top: 35px;
-    opacity: 0;
-  }
+.scroll__drop {
+  position: relative;
+  color: #ffffff;
 }
 
 .scroll__arrow-down {

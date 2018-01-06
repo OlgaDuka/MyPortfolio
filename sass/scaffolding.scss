@@ -43,3 +43,38 @@ a:hover {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+//--------------------------------------------
+// Центровка
+//--------------------------------------------
+@mixin zero-centered {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+//--------------------------------------------
+// Стрелки с помощью треугольников
+//--------------------------------------------
+@mixin triangle($size, $color) {
+  width: 0;
+  height: 0;
+  border-width: $size;
+  border-style: solid;
+  border-color: $color;
+}
+
+@mixin triangle-top($size, $color) {
+  @include triangle($size, $color);
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-top-style: none;
+}
+
+@mixin triangle-bottom($size, $color) {
+  @include triangle($size, $color);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-style: none;
+}

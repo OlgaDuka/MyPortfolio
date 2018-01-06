@@ -1,4 +1,4 @@
-.grid {
+.project {
   position: relative;
   margin: 0 auto;
   padding: 1em 0 4em;
@@ -11,10 +11,23 @@
   &__item {
     letter-spacing: 1px;
     font-size: 0.7em;
+    padding: 3px;
+  }
+
+  @media (max-width: 400px) {
+    &__item {
+      font-size: 0.7em;
+      padding: 0;
+    }
   }
 
   @media (min-width: 480px) {
     max-width: 450px;
+
+    &__item {
+      font-size: 1em;
+      padding: 5px;
+    }
   }
 
   @media (min-width: 768px) {
@@ -22,6 +35,7 @@
 
     &__item {
       font-size: 1.2em;
+      padding: 7px;
     }
   }
 
@@ -31,32 +45,41 @@
     &__item {
       letter-spacing: 1px;
       font-size: 0.7em;
+      padding: 5px;
     }
   }
 
   @media (min-width: 1200px) {
     width: 350px;
+
+    &__item {
+      letter-spacing: 1px;
+      font-size: 0.7em;
+      padding: 3px;
+    }
   }
 }
 
-.grid h2 {
+.project__title {
+  margin: 0;
   font-size: 20px;
+  color: #ffffff;
 }
 
-.grid figure {
+.project figure {
   position: relative;
   overflow: hidden;
   margin: 10px 1%;
   min-width: 100%;
   max-width: 100%;
   height: auto;
-  background: #3085a3;
+  background: #444444;
   text-align: center;
   box-shadow: 2px 2px 5px #cccccc;
   cursor: pointer;
 }
 
-.grid figure img {
+.project figure img {
   position: relative;
   display: block;
   min-height: auto;
@@ -64,59 +87,28 @@
   opacity: 0.8;
 }
 
-.grid figure figcaption {
+.project figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   padding: 1em;
   color: #ffffff;
   font-size: 1.25em;
   backface-visibility: hidden;
 }
 
-.grid figure figcaption::before,
-.grid figure figcaption::after {
+.project figure figcaption::before,
+.project figure figcaption::after {
   pointer-events: none;
 }
 
-.grid figure figcaption,
-.grid figure figcaption > a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.grid figure figcaption > a {
-  z-index: 1000;
-  text-indent: 200%;
-  white-space: nowrap;
-  font-size: 0;
-  opacity: 0;
-}
-
-.grid figure h2 {
-  word-spacing: -0.15em;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-
-.grid figure h2 span {
-  font-weight: 800;
-}
-
-.grid figure h2,
-.grid figure p {
-  margin: 0;
-}
-
-.grid figure ul {
+.project__list {
   text-align: left;
   text-decoration: none;
   list-style: none;
   margin: 0;
   padding: 0;
   width: 100%;
-}
-
-.grid figure ul > li {
-  padding: 0;
 }

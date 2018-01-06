@@ -29,6 +29,11 @@ h3 {
 // ----------------------------------------------
 // Общие стили
 // ----------------------------------------------
+.header {
+  position: relative;
+  width: 100%;
+  z-index: 998;
+}
 
 .container,
 .pfblock__container {
@@ -52,58 +57,49 @@ h3 {
 
 .pfblock {
   padding: 70px 0 70px 0;
-}
 
-.pfblock--gray {
-  background: #f5f5f5;
-}
-
-.pfblock__flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  align-content: stretch;
-  justify-content: space-around;
-}
-
-.pfblock__image {
-  padding: 0;
-}
-
-.pfblock__image,
-.pfblock__image h1 {
-  color: #ffffff;
-}
-
-.pfblock__header {
-  text-align: center;
-  margin: 0 0 50px 0;
-
-  &--bottom {
-    margin: 20px 0 0 0;
+  &--gray {
+    background: #f5f5f5;
   }
-}
 
-.pfblock__title {
-  font-weight: 800;
-}
+  &__flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: stretch;
+    justify-content: space-around;
+  }
 
-.pfblock__subtitle {
-  margin: 0 auto;
-  font-style: normal;
-  font-size: 18px;
-  width: 60%;
-}
+  &__header {
+    text-align: center;
+    margin: 0 0 50px 0;
 
-.pfblock__line {
-  background: rgba(135, 135, 135, 0.5);
-  width: 100px;
-  height: 1px;
-  margin: 20px auto;
-}
+    &--bottom {
+      margin: 20px 0 0 0;
+    }
+  }
 
-.pfblock__icon {
-  font-size: 32px;
+  &__title {
+    font-weight: 800;
+  }
+
+  &__subtitle {
+    margin: 0 auto;
+    font-style: normal;
+    font-size: 18px;
+    width: 60%;
+  }
+
+  &__line {
+    background: rgba(135, 135, 135, 0.5);
+    width: 100px;
+    height: 1px;
+    margin: 20px auto;
+  }
+
+  &__icon {
+    font-size: 32px;
+  }
 }
 
 /* ---------------------------------------------- /*
