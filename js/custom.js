@@ -10,6 +10,7 @@
     var toggle = document.querySelector('.navbar__toggle');
     var menu = document.querySelector('.navbar__list');
     var menuItems = menu.querySelectorAll('.navbar__item');
+    var tiles = document.querySelectorAll('.tile');
 
     // ----------------------------------------------
     // "Мягкий" скроллинг при нажатии на пункт меню или кнопки перехода
@@ -81,15 +82,21 @@
     // ==================================================
     // Эффекты для раздела "Технологии"
     // ==================================================
-    $('.tile').bind('mouseover', function (e) {
-      e.target.classList.add('animated');
-      e.target.classList.add('swing');
-      e.preventDefault();
-    });
-    $('.tile').bind('mouseout', function (e) {
-      e.target.classList.remove('animated');
-      e.target.classList.remove('swing');
-      e.preventDefault();
+    // Переключаем анимацию на tile
+    var onTileMouseover = function (evt) {
+      evt.currentTarget.classList.add('animated');
+      evt.currentTarget.classList.add('flash');
+    };
+
+    var onTileMouseout = function (evt) {
+      evt.currentTarget.classList.remove('animated');
+      evt.currentTarget.classList.remove('flash');
+    };
+
+    // Добавляем событие ховера на все tile
+    [].forEach.call(tiles, function (element) {
+      element.addEventListener('mouseover', onTileMouseover);
+      element.addEventListener('mouseout', onTileMouseout);
     });
 
     // ----------------------------------------------

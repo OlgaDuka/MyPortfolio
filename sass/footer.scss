@@ -7,7 +7,7 @@
   &__family {
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     flex-wrap: wrap;
   }
 
@@ -21,11 +21,17 @@
   }
 
   &__academy {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0 10px;
     fill: #ffb601;
     color: #ffb601;
     text-decoration: none;
+
+    span {
+      margin-left: 10px;
+    }
 
     &:hover {
       fill: #dddddd;

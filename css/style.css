@@ -599,6 +599,32 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-name: pulse;
           animation-name: pulse; }
 
+@-webkit-keyframes flash {
+  0%, 100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1); }
+  50% {
+    opacity: 0.2;
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+            transform: scale3d(1.05, 1.05, 1.05); } }
+
+@keyframes flash {
+  0%, 100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1); }
+  50% {
+    opacity: 0.2;
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+            transform: scale3d(1.05, 1.05, 1.05); } }
+
+.flash {
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-name: flash;
+          animation-name: flash; }
+
 @-webkit-keyframes swing {
   20% {
     -webkit-transform: rotate3d(0, 0, 1, 15deg);
@@ -1221,12 +1247,15 @@ h3 {
   table-layout: fixed;
   margin: 0;
   padding: 0; }
-  .skills__list:hover .skills__item {
+  .skills__list:hover .skills__item,
+  .skills__list:active .skills__item {
     width: 10%; }
-  .skills__list:hover .skills__item:hover {
+  .skills__list:hover .skills__item:hover,
+  .skills__list:active .skills__item:active {
     width: 60%;
     background-color: #dddddd; }
-    .skills__list:hover .skills__item:hover * {
+    .skills__list:hover .skills__item:hover *,
+    .skills__list:active .skills__item:active * {
       opacity: 1;
       -webkit-transform: translateX(0);
               transform: translateX(0); }
@@ -1298,8 +1327,12 @@ h3 {
   .skills__accordion {
     height: auto; }
   .skills__list .skills__item,
-  .skills__list .skills__item:hover, .skills__list:hover .skills__item,
-  .skills__list:hover .skills__item:hover {
+  .skills__list .skills__item:hover,
+  .skills__list .skills__item:active, .skills__list:hover .skills__item,
+  .skills__list:hover .skills__item:hover,
+  .skills__list:hover .skills__item:active, .skills__list:active .skills__item,
+  .skills__list:active .skills__item:hover,
+  .skills__list:active .skills__item:active {
     position: relative;
     display: table;
     table-layout: fixed;
@@ -1329,6 +1362,15 @@ h3 {
     font-weight: 400;
     color: #333333; }
   .calltoaction__contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 20px;
     font-weight: 700;
     color: #333333; }
@@ -1376,9 +1418,9 @@ h3 {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: baseline;
-        -ms-flex-align: baseline;
-            align-items: baseline;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
   .footer__heart {
@@ -1387,10 +1429,20 @@ h3 {
     margin: 0 20px 0 10px;
     color: #ffffff; }
   .footer__academy {
-    display: inline-block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 0 10px;
     fill: #ffb601;
     color: #ffb601;
     text-decoration: none; }
+    .footer__academy span {
+      margin-left: 10px; }
     .footer__academy:hover {
       fill: #dddddd; }

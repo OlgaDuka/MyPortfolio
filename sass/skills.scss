@@ -20,11 +20,13 @@ $text-offset: $a-height - 100;
     margin: 0;
     padding: 0;
 
-    &:hover .skills__item {
+    &:hover .skills__item,
+    &:active .skills__item {
       width: 10%;
     }
 
-    &:hover .skills__item:hover {
+    &:hover .skills__item:hover,
+    &:active .skills__item:active {
       width: 60%;
       background-color: #dddddd;
 
@@ -119,9 +121,11 @@ $text-offset: $a-height - 100;
     }
 
     &__list,
-    &__list:hover {
+    &__list:hover,
+    &__list:active {
       .skills__item,
-      .skills__item:hover {
+      .skills__item:hover,
+      .skills__item:active {
         position: relative;
         display: table;
         table-layout: fixed;
