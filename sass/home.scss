@@ -1,6 +1,6 @@
 .home {
   background: url("../images/cover.jpg");
-  background-color: #222222;
+  background-color: $dark-color;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -31,7 +31,7 @@
 
   &__title {
     font-weight: 700;
-    color: #ffffff;
+    color: $light-color;
   }
 
   &__start {
@@ -39,7 +39,7 @@
     font-weight: 400;
     text-transform: none;
     margin: 15px 0;
-    color: #ffffff;
+    color: $light-color;
     letter-spacing: 1.5px;
   }
 }

@@ -1,16 +1,18 @@
 .navbar {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: left;
   margin: 0;
   border-radius: 4px;
   text-transform: uppercase;
-  font-family: "Open Sans", sans-serif;
-  background: #ffffff;
+  font-family: $default-font;
+  background: $light-color;
   border: 1px solid #dddddd;
   box-shadow: 2px 5px 2px #cccccc;
 
-  @media (max-width: 767px) {
-    flex-direction: column;
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    align-items: center;
   }
 }
 
@@ -25,7 +27,7 @@
   letter-spacing: 3px;
   line-height: 20px;
   text-decoration: none;
-  color: #222222;
+  color: $dark-color;
 }
 
 .navbar__toggle {
@@ -38,53 +40,54 @@
   border: 1px solid transparent;
   border-radius: 4px;
   outline: 0;
-  opacity: 0;
+  opacity: 1;
   z-index: 1;
+  cursor: pointer;
 
-  @media (max-width: 767px) {
-    opacity: 1;
-    cursor: pointer;
+  &:hover {
+    background-color: #dddddd;
+  }
 
-    &:hover {
-      background-color: #dddddd;
-    }
+  &:active {
+    opacity: 0.5;
+  }
 
-    &:active {
-      opacity: 0.5;
-    }
+  @media (min-width: $tablet-width) {
+    opacity: 0;
   }
 }
 
 .navbar__list {
   display: flex;
+  flex-direction: column;
   padding: 0;
+  padding-left: 15px;
   margin: 0;
   list-style: none;
   z-index: 10;
 
-  @media (max-width: 767px) {
-    margin-right: auto;
-    margin-left: 20px;
-    flex-direction: column;
+  &--close {
+    display: none;
   }
 
-  &--close {
-    @media (max-width: 767px) {
-      display: none;
-    }
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    margin-left: auto;
   }
 }
 
 .navbar__item {
   position: relative;
   display: inline-block;
-  margin: 10px 8px;
+  margin: 10px 7px;
 
   a {
     text-decoration: none;
     font-size: 11px;
-    letter-spacing: 3px;
-    color: #222222;
+    letter-spacing: 2px;
+    color: $dark-color;
   }
 
   &--active a {
@@ -101,7 +104,7 @@
 }
 
 .navbar__icon {
-  background: #222222;
+  background: $dark-color;
   display: block;
   width: 22px;
   height: 2px;

@@ -27,7 +27,7 @@
 
 .scroll__arrow-up {
   @include zero-centered;
-  @include triangle-top(7px, #ffffff);
+  @include triangle-top(7px, $light-color);
 }
 
 // ----------------------------------------------
@@ -38,7 +38,7 @@
   position: absolute;
   left: 50%;
   bottom: 40px;
-  border: 2px solid #ffffff;
+  border: 2px solid $light-color;
   border-radius: 50%;
   height: 50px;
   width: 50px;
@@ -50,11 +50,11 @@
 
 .scroll__drop {
   position: relative;
-  color: #ffffff;
+  color: $light-color;
 }
 
 .scroll__arrow-down {
   @include zero-centered;
-  @include triangle-bottom(7px, #ffffff);
+  @include triangle-bottom(7px, $light-color);
   left: -7px;
 }

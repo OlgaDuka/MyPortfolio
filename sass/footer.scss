@@ -2,7 +2,7 @@
   background: #333333;
   text-align: center;
   padding: 40px 0;
-  color: #ffffff;
+  color: $light-color;
 
   &__family {
     display: flex;
@@ -17,7 +17,7 @@
 
   &__copyright {
     margin: 0 20px 0 10px;
-    color: #ffffff;
+    color: $light-color;
   }
 
   &__academy {

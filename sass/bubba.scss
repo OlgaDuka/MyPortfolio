@@ -3,7 +3,7 @@
 //---------------
 
 .effect-bubba {
-  min-width: 300px;
+  min-width: $panel-width;
 }
 
 .effect-bubba img {
@@ -28,14 +28,14 @@
 }
 
 .effect-bubba figcaption::before {
-  border-top: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
+  border-top: 2px solid $light-color;
+  border-bottom: 2px solid $light-color;
   transform: scale(0, 1);
 }
 
 .effect-bubba figcaption::after {
-  border-right: 2px solid #ffffff;
-  border-left: 2px solid #ffffff;
+  border-right: 2px solid $light-color;
+  border-left: 2px solid $light-color;
   transform: scale(1, 0);
 }
 
@@ -50,7 +50,7 @@
   opacity: 0;
   transition: transform 0.35s;
   transform: translate3d(0, 0, 0);
-  color: #ffffff;
+  color: $light-color;
 }
 
 .effect-bubba p {

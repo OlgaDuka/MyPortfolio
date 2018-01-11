@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* stylelint-disable */
 /*! normalize.css v6.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -374,6 +375,9 @@ template {
 [hidden] {
   display: none; }
 
+/* Настройка вьюпорта */
+/* Настройка текстовых параметров */
+/* Цвета сайта */
 @font-face {
   font-family: "Open Sans";
   font-weight: 400;
@@ -396,10 +400,10 @@ body {
   min-width: 320px;
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 300;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-weight: 400;
   font-size: 14px;
-  color: #666666;
+  color: #222222;
   overflow-x: hidden; }
 
 img {
@@ -605,7 +609,7 @@ Copyright (c) 2015 Daniel Eden
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1); }
   50% {
-    opacity: 0.2;
+    opacity: 0;
     -webkit-transform: scale3d(1.05, 1.05, 1.05);
             transform: scale3d(1.05, 1.05, 1.05); } }
 
@@ -615,7 +619,7 @@ Copyright (c) 2015 Daniel Eden
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1); }
   50% {
-    opacity: 0.2;
+    opacity: 0;
     -webkit-transform: scale3d(1.05, 1.05, 1.05);
             transform: scale3d(1.05, 1.05, 1.05); } }
 
@@ -789,23 +793,30 @@ Copyright (c) 2015 Daniel Eden
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
   margin: 0;
   border-radius: 4px;
   text-transform: uppercase;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", "Arial", sans-serif;
   background: #ffffff;
   border: 1px solid #dddddd;
   -webkit-box-shadow: 2px 5px 2px #cccccc;
           box-shadow: 2px 5px 2px #cccccc; }
-  @media (max-width: 767px) {
+  @media (min-width: 768px) {
     .navbar {
-      -webkit-box-orient: vertical;
+      -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column; } }
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; } }
 
 .navbar__brand {
   height: 50px;
@@ -830,45 +841,52 @@ Copyright (c) 2015 Daniel Eden
   border: 1px solid transparent;
   border-radius: 4px;
   outline: 0;
-  opacity: 0;
-  z-index: 1; }
-  @media (max-width: 767px) {
+  opacity: 1;
+  z-index: 1;
+  cursor: pointer; }
+  .navbar__toggle:hover {
+    background-color: #dddddd; }
+  .navbar__toggle:active {
+    opacity: 0.5; }
+  @media (min-width: 768px) {
     .navbar__toggle {
-      opacity: 1;
-      cursor: pointer; }
-      .navbar__toggle:hover {
-        background-color: #dddddd; }
-      .navbar__toggle:active {
-        opacity: 0.5; } }
+      opacity: 0; } }
 
 .navbar__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 0;
+  padding-left: 15px;
   margin: 0;
   list-style: none;
   z-index: 10; }
-  @media (max-width: 767px) {
+  .navbar__list--close {
+    display: none; }
+  @media (min-width: 768px) {
     .navbar__list {
-      margin-right: auto;
-      margin-left: 20px;
-      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column; } }
-  @media (max-width: 767px) {
-    .navbar__list--close {
-      display: none; } }
+          -ms-flex-direction: row;
+              flex-direction: row;
+      margin-right: 20px;
+      margin-left: auto; } }
 
 .navbar__item {
   position: relative;
   display: inline-block;
-  margin: 10px 8px; }
+  margin: 10px 7px; }
   .navbar__item a {
     text-decoration: none;
     font-size: 11px;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     color: #222222; }
   .navbar__item--active a {
     color: #e7746f; }
@@ -890,7 +908,7 @@ Copyright (c) 2015 Daniel Eden
   margin-top: 4px; }
 
 .effect-bubba {
-  min-width: 300px; }
+  min-width: 320px; }
 
 .effect-bubba img {
   opacity: 1;
@@ -974,17 +992,21 @@ Copyright (c) 2015 Daniel Eden
 /* ---------------------------------------------- /*
  * Typography
 /* ---------------------------------------------- */
-h1,
+h1 {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 40px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-transform: uppercase; }
+
 h2,
 h3 {
-  font: 700 40px/1.2 "Open Sans", sans-serif;
+  font-family: "Open Sans", "Arial", sans-serif;
   text-transform: uppercase;
   letter-spacing: 5px;
+  font-weight: 700;
   margin: 5px 0 5px;
   color: #222222; }
-
-h1 {
-  font: 700 40px/1.2 "Montserrat", sans-serif; }
 
 h2 {
   font-size: 30px;
@@ -1002,27 +1024,36 @@ h3 {
 
 .container,
 .pfblock__container {
-  padding-right: 15px;
-  padding-left: 15px;
+  min-width: 320px;
+  padding: 0;
   margin-right: auto;
   margin-left: auto; }
+  @media (min-width: 480px) {
+    .container,
+    .pfblock__container {
+      max-width: 450px;
+      padding-right: 10px;
+      padding-left: 10px; } }
   @media (min-width: 768px) {
     .container,
     .pfblock__container {
-      width: 750px; } }
-  @media (min-width: 992px) {
+      padding-right: 15px;
+      padding-left: 15px;
+      max-width: 750px; } }
+  @media (min-width: 1024px) {
     .container,
     .pfblock__container {
-      width: 970px; } }
+      max-width: 1000px; } }
   @media (min-width: 1200px) {
     .container,
     .pfblock__container {
-      width: 1170px; } }
+      max-width: 1170px; } }
 
 .pfblock {
-  padding: 70px 0 70px 0; }
+  padding: 70px 0 70px 0;
+  background-color: #ffffff; }
   .pfblock--gray {
-    background: #f5f5f5; }
+    background-color: #f5f5f5; }
   .pfblock__flex-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1042,13 +1073,22 @@ h3 {
     .pfblock__header--bottom {
       margin: 20px 0 0 0; }
   .pfblock__title {
-    font-weight: 800; }
+    font-weight: 700;
+    font-size: 24px; }
+    @media (min-width: 480px) {
+      .pfblock__title {
+        font-size: 30px; } }
   .pfblock__subtitle {
     margin: 0 auto;
-    font-style: normal;
     font-size: 18px;
-    width: 60%;
+    width: 90%;
     line-height: 24px; }
+    @media (min-width: 768px) {
+      .pfblock__subtitle {
+        width: 80%; } }
+    @media (min-width: 1200px) {
+      .pfblock__subtitle {
+        width: 60%; } }
   .pfblock__line {
     background: rgba(135, 135, 135, 0.5);
     width: 100px;
@@ -1056,26 +1096,6 @@ h3 {
     margin: 20px auto; }
   .pfblock__icon {
     font-size: 32px; }
-
-/* ---------------------------------------------- /*
- * Media
-/* ---------------------------------------------- */
-@media (max-width: 767px) {
-  .calltoaction {
-    text-align: center; }
-  .pfblock__subtitle {
-    width: 80%; } }
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 34px;
-    letter-spacing: 3px; }
-  h2 {
-    font-size: 24px;
-    margin: 0 0 30px;
-    letter-spacing: 3px; }
-  .pfblock__subtitle {
-    width: 100%; } }
 
 .home {
   background: url("../images/cover.jpg");
@@ -1122,16 +1142,16 @@ h3 {
   text-align: center;
   padding: 30px 20px;
   margin: 10px;
-  max-width: 250px;
-  min-height: 250px;
+  width: 300px;
+  min-height: 150px;
   background-color: #dddddd;
   border: 1px solid #f5f5f5;
   -webkit-box-shadow: 2px 2px 5px #cccccc;
           box-shadow: 2px 2px 5px #cccccc; }
-  @media (max-width: 480px) {
+  @media (min-width: 480px) {
     .tile {
-      min-height: 150px;
-      min-width: 300px; } }
+      min-height: 250px;
+      width: 250px; } }
   .tile__title {
     margin: 0 0 15px;
     padding: 0;
@@ -1170,7 +1190,7 @@ h3 {
       .project__item {
         font-size: 1.2em;
         padding: 7px; } }
-  @media (min-width: 992px) {
+  @media (min-width: 1024px) {
     .project {
       max-width: 400px; }
       .project__item {
@@ -1236,109 +1256,147 @@ h3 {
 
 .skills__accordion {
   width: 100%;
-  max-width: 1200px;
-  height: 500px;
+  min-width: 320px;
+  height: auto;
   overflow: hidden;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 0; }
+  @media (min-width: 1024px) {
+    .skills__accordion {
+      max-width: 1000px;
+      height: 500px; } }
+  @media (min-width: 1200px) {
+    .skills__accordion {
+      max-width: 1150px; } }
 
 .skills__list {
   width: 100%;
-  display: table;
-  table-layout: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 0;
   padding: 0; }
-  .skills__list:hover .skills__item,
-  .skills__list:active .skills__item {
-    width: 10%; }
-  .skills__list:hover .skills__item:hover,
-  .skills__list:active .skills__item:active {
-    width: 60%;
-    background-color: #dddddd; }
-    .skills__list:hover .skills__item:hover *,
-    .skills__list:active .skills__item:active * {
-      opacity: 1;
-      -webkit-transform: translateX(0);
-              transform: translateX(0); }
+  @media (min-width: 1024px) {
+    .skills__list {
+      display: table;
+      table-layout: fixed; }
+      .skills__list:hover .skills__item {
+        width: 10%; }
+      .skills__list:hover .skills__item:hover {
+        width: 60%;
+        background-color: #dddddd; }
+        .skills__list:hover .skills__item:hover * {
+          opacity: 1;
+          -webkit-transform: translateX(0);
+                  transform: translateX(0); } }
 
 .skills__item {
-  display: table-cell;
-  vertical-align: bottom;
   position: relative;
-  width: 20%;
-  height: 500px;
+  width: 100%;
+  height: 250px;
+  background-color: #dddddd;
   background-repeat: no-repeat;
   background-position: top;
-  -webkit-transition: all 500ms ease;
-  transition: all 500ms ease; }
+  background-size: auto; }
   .skills__item:nth-child(1) {
-    background-image: url("../images/skill1.jpg"); }
+    background-image: url("../images/skill1-mobile.jpg"); }
   .skills__item:nth-child(2) {
-    background-image: url("../images/skill2.jpg"); }
+    background-image: url("../images/skill2-mobile.jpg"); }
   .skills__item:nth-child(3) {
-    background-image: url("../images/skill3.jpg"); }
+    background-image: url("../images/skill3-mobile.jpg"); }
   .skills__item:nth-child(4) {
-    background-image: url("../images/skill4.jpg"); }
+    background-image: url("../images/skill4-mobile.jpg"); }
   .skills__item:nth-child(5) {
-    background-image: url("../images/skill5.jpg"); }
+    background-image: url("../images/skill5-mobile.jpg"); }
+  @media (min-width: 768px) {
+    .skills__item {
+      height: 500px; }
+      .skills__item:nth-child(1) {
+        background-image: url("../images/skill1.jpg"); }
+      .skills__item:nth-child(2) {
+        background-image: url("../images/skill2.jpg"); }
+      .skills__item:nth-child(3) {
+        background-image: url("../images/skill3.jpg"); }
+      .skills__item:nth-child(4) {
+        background-image: url("../images/skill4.jpg"); }
+      .skills__item:nth-child(5) {
+        background-image: url("../images/skill5.jpg"); } }
+  @media (min-width: 1024px) {
+    .skills__item {
+      display: table-cell;
+      vertical-align: bottom;
+      width: 20%;
+      -webkit-transition: all 500ms ease;
+      transition: all 500ms ease; } }
 
 .skills__desc {
   display: block;
   overflow: hidden;
   width: 100%;
-  height: 500px;
+  height: 250px;
   position: relative;
   z-index: 3;
-  vertical-align: bottom;
-  padding: 20px 30px;
+  padding: 10px 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #ffffff;
-  text-decoration: none;
-  font-family: "Open Sans", sans-serif;
-  -webkit-transition: all 200ms ease;
-  transition: all 200ms ease; }
+  text-decoration: none; }
   .skills__desc * {
-    opacity: 0;
     margin: 0;
     width: 100%;
+    text-align: center;
     text-overflow: ellipsis;
     position: relative;
     z-index: 5;
     white-space: nowrap;
     overflow: hidden;
-    -webkit-transform: translateX(-20px);
-            transform: translateX(-20px);
-    -webkit-transition: all 400ms ease;
-    transition: all 400ms ease; }
+    opacity: 1; }
+  @media (min-width: 768px) {
+    .skills__desc {
+      height: 500px;
+      padding: 20px 30px; } }
+  @media (min-width: 1024px) {
+    .skills__desc {
+      vertical-align: bottom;
+      -webkit-transition: all 200ms ease;
+      transition: all 200ms ease; }
+      .skills__desc * {
+        text-align: left;
+        opacity: 0;
+        -webkit-transform: translateX(-20px);
+                transform: translateX(-20px);
+        -webkit-transition: all 400ms ease;
+        transition: all 400ms ease; } }
 
 .skills__title {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", Arial, sans-serif;
   text-overflow: clip;
-  font-size: 30px;
+  font-size: 18px;
   text-transform: uppercase;
   margin-bottom: 2px;
-  top: 400px; }
+  top: 180px; }
+  @media (min-width: 768px) {
+    .skills__title {
+      font-size: 30px;
+      top: 380px; } }
+  @media (min-width: 1024px) {
+    .skills__title {
+      top: 400px; } }
 
 .skills__text {
-  top: 400px;
-  font-size: 16px; }
-
-@media screen and (max-width: 768px) {
-  .skills__accordion {
-    height: auto; }
-  .skills__list .skills__item,
-  .skills__list .skills__item:hover,
-  .skills__list .skills__item:active, .skills__list:hover .skills__item,
-  .skills__list:hover .skills__item:hover,
-  .skills__list:hover .skills__item:active, .skills__list:active .skills__item,
-  .skills__list:active .skills__item:hover,
-  .skills__list:active .skills__item:active {
-    position: relative;
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    -webkit-transition: none;
-    transition: none; } }
+  top: 180px;
+  font-size: 12px; }
+  @media (min-width: 768px) {
+    .skills__text {
+      top: 380px;
+      font-size: 16px; } }
+  @media (min-width: 1024px) {
+    .skills__text {
+      top: 400px; } }
 
 .calltoaction * {
   text-align: center; }
@@ -1349,18 +1407,24 @@ h3 {
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
-  padding: 50px 0; }
+  padding: 40px 0; }
   .calltoaction__title {
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: 1px;
     margin-bottom: 5px;
     color: #ffffff; }
+    @media (min-width: 480px) {
+      .calltoaction__title {
+        font-size: 24px; } }
   .calltoaction__desc {
     padding-top: 10px;
     padding-bottom: 20px;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 400;
     color: #333333; }
+    @media (min-width: 480px) {
+      .calltoaction__desc {
+        font-size: 18px; } }
   .calltoaction__contact {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1371,9 +1435,12 @@ h3 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     color: #333333; }
+  @media (min-width: 480px) {
+    .calltoaction {
+      font-size: 20px; } }
 
 .social {
   list-style: none;
