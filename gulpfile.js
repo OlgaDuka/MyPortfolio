@@ -9,6 +9,7 @@ var minify = require('gulp-csso');
 var rename = require('gulp-rename');
 var svgstore = require('gulp-svgstore');
 var svgmin = require('gulp-svgmin');
+var imagemin = require('gulp-imagemin');
 var uglify = require('gulp-uglify');
 var del = require('del');
 var run = require('run-sequence');
@@ -31,6 +32,17 @@ gulp.task('style', function () {
       .pipe(rename('style.min.css'))
       .pipe(gulp.dest('css'))
       .pipe(server.stream());
+});
+
+// Оптимизация графики
+gulp.task('images', function() {
+  return gulp.src('img/**/*.{png,jpg,svg}')
+    .pipe(imagemin([
+      imagemin.optipng({optimizationLevel: 3}),
+      imagemin.jpegtran({progressive: true}),
+      imagemin.svgo()
+    ]))
+    .pipe(gulp.dest('images'));
 });
 
 // Создание SVG-спрайта

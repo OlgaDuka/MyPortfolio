@@ -396,6 +396,12 @@ template {
   font-style: normal;
   src: url("../fonts/opensansbold.woff2") format("woff2"), url("../fonts/opensansbold.woff") format("woff"); }
 
+@font-face {
+  font-family: "Lobster";
+  font-weight: 700;
+  font-style: normal;
+  src: local("Lobster"), url("../fonts/Lobster-Regular.ttf"); }
+
 body {
   min-width: 320px;
   margin: 0;
@@ -604,7 +610,8 @@ Copyright (c) 2015 Daniel Eden
           animation-name: pulse; }
 
 @-webkit-keyframes flash {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1); }
@@ -614,7 +621,8 @@ Copyright (c) 2015 Daniel Eden
             transform: scale3d(1.05, 1.05, 1.05); } }
 
 @keyframes flash {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1); }
@@ -993,7 +1001,7 @@ Copyright (c) 2015 Daniel Eden
  * Typography
 /* ---------------------------------------------- */
 h1 {
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: "Open Sans", "Arial", sans-serif;
   font-size: 40px;
   letter-spacing: 3px;
   font-weight: 700;
@@ -1373,7 +1381,7 @@ h3 {
         transition: all 400ms ease; } }
 
 .skills__title {
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   text-overflow: clip;
   font-size: 18px;
   text-transform: uppercase;
