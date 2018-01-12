@@ -17,9 +17,14 @@
     // ----------------------------------------------
     // "Мягкий" скроллинг при нажатии на пункт меню или кнопки перехода
     // ----------------------------------------------
+
+    $(document).on('scroll', onScroll);
+    // Садим меню на стикер вверху экрана
+    $('.header').sticky({topSpacing: 0});
+
     // Функция для переключения активного пункта меню во время скроллинга
     var onScroll = function (evt) {
-      var scrollPos = $(document).scrollTop() + 150;
+      var scrollPos = $(document).scrollTop() + 100;
       $('.navbar__item a').each(function () {
         evt.preventDefault();
         var currLink = $(this);
@@ -31,9 +36,8 @@
       });
     };
 
-    $('a[href*=#]').bind('click', function (e) {
+    $('a[href*=#]').on('click', function (e) {
       var anchor = $(this);
-      e.preventDefault();
       $(document).off('scroll');
 
       $('.navbar__item a').each(function () {
@@ -42,7 +46,7 @@
 
       anchor.addClass('navbar__link--active');
 
-      $('html, body').stop().animate({scrollTop: $(anchor.attr('href')).offset().top}, 1000, function () {
+      $('html, body').stop().animate({'scrollTop': $(anchor.attr('href')).offset().top}, 1000, function () {
         $(document).on('scroll', onScroll);
       });
     });
@@ -63,8 +67,6 @@
     // ----------------------------------------------
     // Меню
     // ----------------------------------------------
-    // Садим меню на стикер вверху экрана
-    $('.header').sticky({topSpacing: 0});
 
     // Закрываем меню, если JS работает
     menu.classList.remove('navbar__list--nojs');

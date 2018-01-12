@@ -96,8 +96,7 @@
   color: $dark-color;
 
   &:hover,
-  &:focus,
-  &:active {
+  &:focus {
     background: none;
     outline: 0;
     color: #e7746f;
