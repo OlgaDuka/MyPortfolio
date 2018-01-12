@@ -9,7 +9,6 @@
   $(document).ready(function () {
     var toggle = document.querySelector('.navbar__toggle');
     var menu = document.querySelector('.navbar__list');
-    var menuItems = menu.querySelectorAll('.navbar__item');
     var tiles = document.querySelectorAll('.tile');
     // WOW - обеспечивает анимацию при скроллинге
     var wow = new window.WOW();
