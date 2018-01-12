@@ -87,23 +87,23 @@
   position: relative;
   display: inline-block;
   margin: 10px 6px;
+}
 
-  a {
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: $dark-color;
-  }
+.navbar__link {
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: $dark-color;
 
-  &--active a {
+  &:hover,
+  &:focus,
+  &:active {
+    background: none;
+    outline: 0;
     color: #e7746f;
   }
 
-  a:hover,
-  a:focus,
-  a:active {
-    background: none;
-    outline: 0;
+  &--active {
     color: #e7746f;
   }
 }

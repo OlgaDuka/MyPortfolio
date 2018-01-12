@@ -11,15 +11,46 @@
     var menu = document.querySelector('.navbar__list');
     var menuItems = menu.querySelectorAll('.navbar__item');
     var tiles = document.querySelectorAll('.tile');
+    // WOW - обеспечивает анимацию при скроллинге
+    var wow = new window.WOW();
+    wow.mobile = false;
 
     // ----------------------------------------------
     // "Мягкий" скроллинг при нажатии на пункт меню или кнопки перехода
     // ----------------------------------------------
+    // Функция для переключения активного пункта меню во время скроллинга
+    var onScroll = function (evt) {
+      var scrollPos = $(document).scrollTop() + 150;
+      $('.navbar__item a').each(function () {
+        evt.preventDefault();
+        var currLink = $(this);
+        var refElement = $(currLink.attr('href'));
+        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+          $('.navbar__item a').removeClass('navbar__link--active');
+          currLink.addClass('navbar__link--active');
+        }
+      });
+    };
 
     $('a[href*=#]').bind('click', function (e) {
       var anchor = $(this);
-      $('html, body').stop().animate({scrollTop: $(anchor.attr('href')).offset().top}, 1000);
       e.preventDefault();
+      $(document).off('scroll');
+
+      $('.navbar__item a').each(function () {
+        $(this).removeClass('navbar__link--active');
+      });
+
+      anchor.addClass('navbar__link--active');
+
+      $('html, body').stop().animate({scrollTop: $(anchor.attr('href')).offset().top}, 1000, function () {
+        $(document).on('scroll', onScroll);
+      });
+    });
+
+    // Анимация при скроллинге
+    $('.scroll__down').bind('click', function () {
+      wow.init();
     });
 
     $(window).scroll(function () {
@@ -33,45 +64,27 @@
     // ----------------------------------------------
     // Меню
     // ----------------------------------------------
-
-    // Сброс признака "активный" с пунктов меню
-    var menuDeactivate = function () {
-      [].forEach.call(menuItems, function (element) {
-        element.classList.remove('navbar__item--active');
-      });
-    };
-
-    // Первый активный пункт меню после главной страницы
-    $('.scroll__down').bind('click', function () {
-      menuDeactivate();
-      wow.init();
-      menuItems[1].classList.add('navbar__item--active');
-    });
-
     // Садим меню на стикер вверху экрана
     $('.header').sticky({topSpacing: 0});
 
     // Закрываем меню, если JS работает
     menu.classList.remove('navbar__list--nojs');
     menu.classList.add('navbar__list--close');
+    toggle.classList.remove('navbar__toggle--cross');
     // Переключаем состояние меню по кнопке
     toggle.addEventListener('click', function () {
       menu.classList.toggle('navbar__list--close');
       toggle.classList.toggle('navbar__toggle--cross');
     });
 
-    // Переключаем активный пункт меню и закрываем меню, если оно выпадающее
-    var onMenuItemClick = function (evt) {
-      menuDeactivate();
-      evt.currentTarget.classList.add('navbar__item--active');
+    // Закрываем меню, если оно выпадающее, переключаем вид кнопки
+    var onMenuClick = function () {
       menu.classList.add('navbar__list--close');
       toggle.classList.toggle('navbar__toggle--cross');
     };
 
-    // Добавляем событие клика на пункты меню
-    [].forEach.call(menuItems, function (element) {
-      element.addEventListener('click', onMenuItemClick);
-    });
+    // Добавляем событие клика на меню
+    menu.addEventListener('click', onMenuClick);
 
     // ----------------------------------------------
     // Эффект параллакса на домашней странице
@@ -92,12 +105,12 @@
     // ==================================================
     // Эффекты для раздела "Технологии"
     // ==================================================
-    // Переключаем анимацию на tile
+    // Добавляем анимацию на tile по наведению мышки
     var onTileMouseover = function (evt) {
       evt.currentTarget.classList.add('animated');
       evt.currentTarget.classList.add('flash');
     };
-
+    // Убираем анимацию, когда убираем мышку
     var onTileMouseout = function (evt) {
       evt.currentTarget.classList.remove('animated');
       evt.currentTarget.classList.remove('flash');
@@ -108,12 +121,5 @@
       element.addEventListener('mouseover', onTileMouseover);
       element.addEventListener('mouseout', onTileMouseout);
     });
-
-    // ----------------------------------------------
-    // WOW - обеспечивает анимацию при скроллинге
-    // ----------------------------------------------
-    var wow = new window.WOW();
-    wow.mobile = false;
-    wow.init();
   });
 })(jQuery);

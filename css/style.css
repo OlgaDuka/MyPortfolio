@@ -884,18 +884,17 @@ Copyright (c) 2015 Daniel Eden
   position: relative;
   display: inline-block;
   margin: 10px 6px; }
-  .navbar__item a {
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: #222222; }
-  .navbar__item--active a {
-    color: #e7746f; }
-  .navbar__item a:hover,
-  .navbar__item a:focus,
-  .navbar__item a:active {
+
+.navbar__link {
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #222222; }
+  .navbar__link:hover, .navbar__link:focus, .navbar__link:active {
     background: none;
     outline: 0;
+    color: #e7746f; }
+  .navbar__link--active {
     color: #e7746f; }
 
 .navbar__toggle .navbar__icon {
