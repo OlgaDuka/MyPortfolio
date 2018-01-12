@@ -18,16 +18,17 @@
 
 .navbar__brand {
   height: 50px;
-  padding: 15px 15px;
+  padding: 10px 15px;
   margin-right: auto;
   margin-left: 15px;
-  font-weight: 700;
-  font-size: 22px;
-  font-family: "Lobster", cursive;
-  letter-spacing: 3px;
-  line-height: 20px;
-  text-decoration: none;
-  color: $dark-color;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
 }
 
 .navbar__toggle {
@@ -50,6 +51,10 @@
 
   &:active {
     opacity: 0.5;
+  }
+
+  &--cross {
+
   }
 
   @media (min-width: $tablet-width) {
@@ -81,7 +86,7 @@
 .navbar__item {
   position: relative;
   display: inline-block;
-  margin: 10px 7px;
+  margin: 10px 6px;
 
   a {
     text-decoration: none;
@@ -103,14 +108,33 @@
   }
 }
 
-.navbar__icon {
-  background: $dark-color;
-  display: block;
-  width: 22px;
-  height: 2px;
-  border-radius: 1px;
+.navbar__toggle {
+  .navbar__icon {
+    background: $dark-color;
+    display: block;
+    width: 24px;
+    height: 2px;
+    border-radius: 1px;
+  }
 }
 
 .navbar__toggle .navbar__icon + .navbar__icon {
   margin-top: 4px;
+}
+
+.navbar__toggle--cross {
+  .navbar__icon {
+
+    &:nth-child(4) {
+      display: none;
+    }
+
+    &:nth-child(2) {
+      transform: rotate(45deg) translateX(2px) translateY(2px);
+    }
+
+    &:nth-child(3) {
+      transform: rotate(-45deg) translateX(2px) translateY(-2px);
+    }
+  }
 }

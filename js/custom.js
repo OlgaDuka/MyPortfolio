@@ -57,6 +57,7 @@
     // Переключаем состояние меню по кнопке
     toggle.addEventListener('click', function () {
       menu.classList.toggle('navbar__list--close');
+      toggle.classList.toggle('navbar__toggle--cross');
     });
 
     // Переключаем активный пункт меню и закрываем меню, если оно выпадающее
@@ -64,6 +65,7 @@
       menuDeactivate();
       evt.currentTarget.classList.add('navbar__item--active');
       menu.classList.add('navbar__list--close');
+      toggle.classList.toggle('navbar__toggle--cross');
     };
 
     // Добавляем событие клика на пункты меню

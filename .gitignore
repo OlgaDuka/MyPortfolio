@@ -5,6 +5,8 @@
 *.pdf
 *.psd
 build
+images/svg
+images/sprite.svg
 img
 *.sublime*
 node_modules/

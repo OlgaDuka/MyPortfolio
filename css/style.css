@@ -396,12 +396,6 @@ template {
   font-style: normal;
   src: url("../fonts/opensansbold.woff2") format("woff2"), url("../fonts/opensansbold.woff") format("woff"); }
 
-@font-face {
-  font-family: "Lobster";
-  font-weight: 700;
-  font-style: normal;
-  src: local("Lobster"), url("../fonts/Lobster-Regular.ttf"); }
-
 body {
   min-width: 320px;
   margin: 0;
@@ -496,7 +490,7 @@ a:hover {
 .scroll__down {
   position: absolute;
   left: 50%;
-  bottom: 40px;
+  bottom: 20px;
   border: 2px solid #ffffff;
   border-radius: 50%;
   height: 50px;
@@ -504,7 +498,9 @@ a:hover {
   margin-left: -15px;
   display: block;
   z-index: 10;
-  text-align: center; }
+  text-align: center;
+  -webkit-transform: translateX(-25px);
+          transform: translateX(-25px); }
 
 .scroll__drop {
   position: relative;
@@ -828,16 +824,13 @@ Copyright (c) 2015 Daniel Eden
 
 .navbar__brand {
   height: 50px;
-  padding: 15px 15px;
+  padding: 10px 15px;
   margin-right: auto;
-  margin-left: 15px;
-  font-weight: 700;
-  font-size: 22px;
-  font-family: "Lobster", cursive;
-  letter-spacing: 3px;
-  line-height: 20px;
-  text-decoration: none;
-  color: #222222; }
+  margin-left: 15px; }
+  .navbar__brand:hover {
+    opacity: 0.6; }
+  .navbar__brand:active {
+    opacity: 0.2; }
 
 .navbar__toggle {
   position: absolute;
@@ -890,7 +883,7 @@ Copyright (c) 2015 Daniel Eden
 .navbar__item {
   position: relative;
   display: inline-block;
-  margin: 10px 7px; }
+  margin: 10px 6px; }
   .navbar__item a {
     text-decoration: none;
     font-size: 11px;
@@ -905,15 +898,26 @@ Copyright (c) 2015 Daniel Eden
     outline: 0;
     color: #e7746f; }
 
-.navbar__icon {
+.navbar__toggle .navbar__icon {
   background: #222222;
   display: block;
-  width: 22px;
+  width: 24px;
   height: 2px;
   border-radius: 1px; }
 
 .navbar__toggle .navbar__icon + .navbar__icon {
   margin-top: 4px; }
+
+.navbar__toggle--cross .navbar__icon:nth-child(4) {
+  display: none; }
+
+.navbar__toggle--cross .navbar__icon:nth-child(2) {
+  -webkit-transform: rotate(45deg) translateX(2px) translateY(2px);
+          transform: rotate(45deg) translateX(2px) translateY(2px); }
+
+.navbar__toggle--cross .navbar__icon:nth-child(3) {
+  -webkit-transform: rotate(-45deg) translateX(2px) translateY(-2px);
+          transform: rotate(-45deg) translateX(2px) translateY(-2px); }
 
 .effect-bubba {
   min-width: 320px; }
@@ -1126,7 +1130,7 @@ h3 {
   .home__intro {
     position: absolute;
     width: 100%;
-    top: 70%;
+    top: 60%;
     left: 0;
     text-align: center;
     -webkit-transform: translate(0%, -50%);
@@ -1445,7 +1449,14 @@ h3 {
             align-items: center;
     font-size: 16px;
     font-weight: 700;
-    color: #333333; }
+    color: #333333;
+    cursor: pointer; }
+    .calltoaction__contact:hover {
+      opacity: 0.7; }
+    .calltoaction__contact:active {
+      opacity: 0.5; }
+  .calltoaction__icon {
+    margin-right: 7px; }
   @media (min-width: 480px) {
     .calltoaction {
       font-size: 20px; } }
