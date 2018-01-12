@@ -5,7 +5,6 @@
 *.pdf
 *.psd
 build
-images1
 images/svg
 images/sprite.svg
 img
