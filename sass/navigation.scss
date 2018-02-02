@@ -31,37 +31,6 @@
   }
 }
 
-.navbar__toggle {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  padding: 9px 10px;
-  background-color: transparent;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  outline: 0;
-  opacity: 1;
-  z-index: 1;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #dddddd;
-  }
-
-  &:active {
-    opacity: 0.5;
-  }
-
-  &--cross {
-
-  }
-
-  @media (min-width: $tablet-width) {
-    opacity: 0;
-  }
-}
-
 .navbar__list {
   display: flex;
   flex-direction: column;
@@ -108,12 +77,37 @@
 }
 
 .navbar__toggle {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 9px 10px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  outline: 0;
+  opacity: 1;
+  z-index: 1;
+  cursor: pointer;
+
   .navbar__icon {
     background: $dark-color;
     display: block;
     width: 24px;
     height: 2px;
     border-radius: 1px;
+  }
+
+  &:hover {
+    background-color: #dddddd;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  @media (min-width: $tablet-width) {
+    opacity: 0;
   }
 }
 
@@ -123,7 +117,6 @@
 
 .navbar__toggle--cross {
   .navbar__icon {
-
     &:nth-child(4) {
       display: none;
     }

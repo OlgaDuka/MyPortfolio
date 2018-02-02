@@ -832,27 +832,6 @@ Copyright (c) 2015 Daniel Eden
   .navbar__brand:active {
     opacity: 0.2; }
 
-.navbar__toggle {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  padding: 9px 10px;
-  background-color: transparent;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  outline: 0;
-  opacity: 1;
-  z-index: 1;
-  cursor: pointer; }
-  .navbar__toggle:hover {
-    background-color: #dddddd; }
-  .navbar__toggle:active {
-    opacity: 0.5; }
-  @media (min-width: 768px) {
-    .navbar__toggle {
-      opacity: 0; } }
-
 .navbar__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -897,12 +876,32 @@ Copyright (c) 2015 Daniel Eden
   .navbar__link--active {
     color: #e7746f; }
 
-.navbar__toggle .navbar__icon {
-  background: #222222;
-  display: block;
-  width: 24px;
-  height: 2px;
-  border-radius: 1px; }
+.navbar__toggle {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 9px 10px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  outline: 0;
+  opacity: 1;
+  z-index: 1;
+  cursor: pointer; }
+  .navbar__toggle .navbar__icon {
+    background: #222222;
+    display: block;
+    width: 24px;
+    height: 2px;
+    border-radius: 1px; }
+  .navbar__toggle:hover {
+    background-color: #dddddd; }
+  .navbar__toggle:active {
+    opacity: 0.5; }
+  @media (min-width: 768px) {
+    .navbar__toggle {
+      opacity: 0; } }
 
 .navbar__toggle .navbar__icon + .navbar__icon {
   margin-top: 4px; }
@@ -1411,7 +1410,7 @@ h3 {
   text-align: center; }
 
 .calltoaction {
-  background: url("../images/item-6.jpg");
+  background: url("../images/item-0.jpg");
   background-color: #222222;
   background-repeat: no-repeat;
   background-position: 0 0;
