@@ -1027,6 +1027,9 @@ h3 {
   letter-spacing: 1px;
   margin: 0 0 5px; }
 
+.sticky-wrapper {
+  background-color: #f5f5f5; }
+
 .header {
   position: relative;
   width: 100%;
@@ -1448,9 +1451,10 @@ h3 {
     color: #333333;
     cursor: pointer; }
     .calltoaction__contact:hover {
-      opacity: 0.7; }
+      color: #ffa000;
+      opacity: 0.9; }
     .calltoaction__contact:active {
-      opacity: 0.5; }
+      opacity: 0.8; }
   .calltoaction__icon {
     margin-right: 7px; }
   @media (min-width: 480px) {
